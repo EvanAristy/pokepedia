@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 // css
 import './styles.css'
 
@@ -6,6 +7,7 @@ const Login = ({ setUser }) => {
 
     // Once the user clicks submit, we will mimic logging in and conditionally render our nav bar.
     const [username, setUsername] = useState('')
+    const navigate = useNavigate()
 
     const handleChange = e => {
         setUsername(e.target.value)
@@ -14,6 +16,9 @@ const Login = ({ setUser }) => {
     const handleSubmit = e => {
         e.preventDefault()
         setUser(username)
+        // We can use useNavigate from RR to redirect our users to a different component/page
+        // DO NOT FORGET the forward / in front of path in navigate()
+        navigate('/pokemon/list')
     }
 
   return (
