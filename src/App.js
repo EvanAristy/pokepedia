@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav';
 // pages
 import Login from './pages/Login';
+import PokemonList from './pages/PokemonList';
+import Home from './pages/Home';
 // contexts
 import UserContext from './contexts/UserContext';
 // css
@@ -11,7 +13,7 @@ import './App.css';
 
 
 
-function App() {
+const App = () => {
   // in able for us to use our contexts we import firt then we can use the useContext hook to access our context
   // const user = useContext(UserContext)
   // console.log(user)
@@ -26,7 +28,9 @@ function App() {
 
         {/* We need to wrap all of routes inside react router Routes Componenet */}
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='login' element={<Login setUser={setUser}/>} />
+          <Route path='pokemon/list' element={<PokemonList />} />
         </Routes>
       </UserContext.Provider>
   
