@@ -19,7 +19,6 @@ const Nav = () => {
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="pokemon/list">Pokemon List</Link>
             </li>
-            
             {
                 !user 
                 ?
